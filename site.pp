@@ -18,27 +18,21 @@ node basenode {
 
 ## PHP server
 node 'web01.hyjf.com' inherits basenode {
-  include nginx, php, nfs
+  include nginx, nfs
 }
 
 node 'web02.hyjf.com' inherits basenode {
-  include nginx, php, nfs
+  include nginx, nfs
 }
 
-node 'w001.hyjf.com' inherits basenode {
-  include nginx, php
-}
 
 ## java service
 node 'srv01.hyjf.com' inherits basenode {
   include javaservices, nfs
 }
-node 'srv02.hyjf.com' inherits basenode {
+node 'dep.hyjf.com' inherits basenode {
   include javaservices, nfs
 }
 
-## backend node
-node 'srv03.hyjf.com' inherits basenode {
-  include javaservices, nfs, nginx
-}
+
 
